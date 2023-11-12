@@ -1,0 +1,18 @@
+.stat-cont{
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 250px;
+    border-color: pink;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    padding: 10px;
+}
+
+.stat-top-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px;
+}
