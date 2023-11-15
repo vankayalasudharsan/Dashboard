@@ -1,8 +1,9 @@
 import React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Legend, Cell } from 'recharts';
+import { Rings } from 'react-loader-spinner'
 
 const PieCharts = props => {
-  const { piedata, month, PassedFunction } = props
+  const { loader, piedata, month, PassedFunction } = props
 
   const UpdateState = (e) => {
     PassedFunction(e.target.value)
@@ -32,7 +33,25 @@ const PieCharts = props => {
           <option value="12">December</option>
         </select>
       </div>
-      <ResponsiveContainer width="100%" height="100%">
+
+
+{
+  loader?(
+    <div className='loader-cont'>
+            <Rings
+              height="80"
+              width="80"
+              color="pink"
+              radius="6"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+              ariaLabel="rings-loading"
+
+            />
+          </div>
+  ):(
+<ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             cx="50%"
@@ -57,6 +76,10 @@ const PieCharts = props => {
           />
         </PieChart>
       </ResponsiveContainer>
+  )
+}
+
+      
     </div>
   );
 };
