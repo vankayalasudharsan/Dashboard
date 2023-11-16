@@ -135,53 +135,55 @@ class Dashboard extends Component {
 
                             ) :
                             (
-                                <div>
-
-
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Category</th>
-                                                <th>price</th>
-                                                <th>Image</th>
-                                                <th>Sold</th>
-                                                <th>Date Of Slod</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                list.map(row => (
-                                                    <tr key={row.id}>
-                                                        <td>{row.id}</td>
-                                                        <td>{row.title}</td>
-                                                        <td>{row.description}</td>
-                                                        <td>{row.category}</td>
-                                                        <td>{row.price}</td>
-                                                        <td>
-                                                            <img className='product-image' src={row.image} alt={row.title} />
-                                                        </td>
-                                                        <td>
-                                                            {
-                                                                row.sold ? 'Yes' : 'No'
-                                                            }
-
-                                                        </td>
-                                                        <td>{formatDate(row.dateOfSale)}</td>
+                                list.length > 0 ?
+                                    (
+                                        <div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Title</th>
+                                                        <th>Description</th>
+                                                        <th>Category</th>
+                                                        <th>price</th>
+                                                        <th>Image</th>
+                                                        <th>Sold</th>
+                                                        <th>Date Of Slod</th>
                                                     </tr>
-                                                ))
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            )
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        list.map(row => (
+                                                            <tr key={row.id}>
+                                                                <td>{row.id}</td>
+                                                                <td>{row.title}</td>
+                                                                <td>{row.description}</td>
+                                                                <td>{row.category}</td>
+                                                                <td>{row.price}</td>
+                                                                <td>
+                                                                    <img className='product-image' src={row.image} alt={row.title} />
+                                                                </td>
+                                                                <td>
+                                                                    {
+                                                                        row.sold ? 'Yes' : 'No'
+                                                                    }
 
+                                                                </td>
+                                                                <td>{formatDate(row.dateOfSale)}</td>
+                                                            </tr>
+                                                        ))
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>) : (
+                                            <div className='loader'>
+                                                <h3>No Results Found</h3>
+                                            </div>
+                                       
+                                    )
+                            )
                     }
                 </div>
-
-
             </div>
         )
     }
