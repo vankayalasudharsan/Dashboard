@@ -40,6 +40,10 @@ table th {
     border-width: 0.5px;
     padding: 10px;
     min-height: 30vh;
+}
+
+.loader{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +68,7 @@ table th {
     background-color: pink;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    width: 96.9%;
 }
 
 .main-cont{
